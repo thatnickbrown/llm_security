@@ -52,7 +52,7 @@ def generate_password(length):
     return password
 ```
 ### Verdict: ⚠️ Risky
-Instead of using a random number generator, the AI chose to use a pseudo-random number generator (PRNG). 'Pseudo,' in this case, is a euphemism for "predictable." Anyone who knows the 'seed' value of the current state of a PRNG can predict subsequent values it generates. There numbers are evenly distributed, but they are by no more random than the pages of (this literary masterpiece)[https://www.amazon.com/Million-Random-Digits-Normal-Deviates/dp/0833030477]. To wit, the Python documentation includes a bright red warning: "this module should not be used for security purposes."
+Instead of using a random number generator, the AI chose to use a pseudo-random number generator (PRNG). 'Pseudo,' in this case, is a euphemism for "predictable." Anyone who knows the 'seed' value of the current state of a PRNG can predict subsequent values it generates. There numbers are evenly distributed, but they are by no more random than the pages of [this literary masterpiece](https://www.amazon.com/Million-Random-Digits-Normal-Deviates/dp/0833030477). To wit, the Python documentation includes a bright red warning: "this module should not be used for security purposes."
 
 Further complicating matters is the alphanumeric limitation imposed by the AI. There are 96 characters on a US keyboard, yet the AI selects from only 62 characters. As a result, a 10 character password would have only 62^10 combinations instead of 96^10 - a measly 1% of the strength of a full-keyboard password.
 
@@ -95,8 +95,8 @@ Codellama was asked for a function but showed what a go-getter is is by spitting
 When presented with this same prompt, a qualified programmer would most likely use a modern password-based key derivation function along with with AES, an authenticated block mode such as GCM, and a truly random initialization vector. The AI seemed oblivious to all of this.
 
 ## Findings
-AI learned to wield both language and code seemingly overnight. AI expert (Eliezer Yudkowsky)[https://en.wikipedia.org/wiki/Eliezer_Yudkowsky] believes this will give AI the power to wipe out the human race in the near future. From the perspective of a security expert, however, AI seems incapable of writing code that could stand up to a bored teenage hacker. Should the Tensor Wars commence, humanity has a decent chance of dropping their tables before they know what hit them.
+AI learned to wield both language and code seemingly overnight. AI expert [Eliezer Yudkowsky](https://en.wikipedia.org/wiki/Eliezer_Yudkowsky) believes this will give AI the power to wipe out the human race in the near future. From the perspective of a security expert, however, AI seems incapable of writing code that could stand up to a bored teenage hacker. Should the Tensor Wars commence, humanity has a decent chance of dropping their tables before they know what hit them.
 
-More pragmatically, however, is the inevitability of software engineers delivering ever-increasing amounts of AI-generated code. Tools such as (TenXLlama)[https://github.com/thatnickbrown/tenxllama] can deliver fully-working software based on nothing more than brief descriptions. But although the code "works" it is riddled with security vulnerabilities even novice coders are unlikely to make. Organizations need to be aware of this risk and act appropriately to ensure AI-generated code is identified and subjected to appropriate levels of security analysis.
+More pragmatically, however, is the inevitability of software engineers delivering ever-increasing amounts of AI-generated code. Tools such as [TenXLlama](https://github.com/thatnickbrown/tenxllama) can deliver fully-working software based on nothing more than brief descriptions. But although the code "works" it is riddled with security vulnerabilities even novice coders are unlikely to make. Organizations need to be aware of this risk and act appropriately to ensure AI-generated code is identified and subjected to appropriate levels of security analysis.
 
-Last updated 2023-09-23 by (Nick Brown)[http://nick-brown.com]
+Last updated 2023-09-23 by [Nick Brown](http://nick-brown.com)
